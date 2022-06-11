@@ -1,0 +1,77 @@
+.sw .toolbar {
+   padding-top: 0;
+ }
+
+ 
+ .sw-btn-prev:before {
+   font: normal normal normal 16px/1 FontAwesome;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   content:"\f060   ";
+   }
+   .sw-btn-next:after {
+   font: normal normal normal 16px/1 FontAwesome;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   content:"  \f061";
+   }
+   .sw-btn-prev {
+   background: var(--bs-secondary) !important;
+   border-color: var(--bs-secondary) !important;
+ }
+
+ #regFormSub {
+   background: var(--bs-success) !important;
+   border-color: var(--bs-success) !important;
+ }
+
+ .sw-btn-prev:hover {
+   background-color: #5c636a !important;
+   border-color: #565e64 !important;
+ }
+
+ 
+/*
+ .form fieldset:hover {
+   border: 1px solid #dee2e6 !important;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25),
+     0 2px 2px rgba(0, 0, 0, 0.20),
+     0 4px 4px rgba(0, 0, 0, 0.15),
+     0 8px 8px rgba(0, 0, 0, 0.10),
+     0 16px 16px rgba(0, 0, 0, 0.05);
+ }*/
+
+ .sdetails {
+   white-space: normal;
+ }
+ 
+
+.sw-theme-dots > .nav .nav-link::before {
+   top: -41px; /*-36*/
+   width: 42px; /*32*/
+   height: 42px; /*32*/
+   border-radius: 0%; /*50%*/
+   background: #eee;/*#f5f5f5;*/
+}
+
+.sw-theme-dots > .nav .nav-link::after {
+   /* added */
+   font: normal normal normal 20px/1.5 FontAwesome;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   color:#fff; 
+   /* //added */
+   top: -35px ;/*-28px;*/
+   width: 30px ;/*16px;*/
+   height: 30px; /*16px;*/
+   border-radius: 0%; /*50%*/
+}
+
+.sw-theme-dots > .nav .nav-link.active::after {
+   content: "\f040";
+}
+
+.sw-theme-dots > .nav .nav-link.done::after {
+   content: "\f00c";
+}
+.hr{border:1.5px solid #037991;opacity:1;}

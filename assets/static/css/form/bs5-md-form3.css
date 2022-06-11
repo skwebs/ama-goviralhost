@@ -1,0 +1,296 @@
+:root {
+  --small-font: .75rem;
+  --form-control-border-color:#ced4da;
+}
+
+/* Common CSS */
+
+
+/*===========================================
+Form Floating Label
+.md-form
+=============================================*/
+
+.form-group {
+  position: relative;
+}
+
+/* LABEL */
+.md-form .form-select~label {
+  pointer-events: none !important;
+}
+
+.md-form .form-control~label,
+.md-form .form-select~label {
+  position: absolute;
+  top: .7rem;
+  color: #777;
+  transition: .3s;
+  line-height: 1;
+}
+
+/* sm */
+.md-form .form-control.form-control-sm~label,
+.md-form .form-select.form-select-sm~label {
+  top: .45rem;
+}
+
+/* lg */
+.md-form .form-control.form-control-lg~label,
+.md-form .form-select.form-select-lg~label {
+  top: 1rem;
+}
+
+/* focus */
+.md-form .form-control:focus~label,
+.md-form .form-select:focus~label {
+  color: var(--bs-primary);
+}
+
+/* label float up */
+/* when focused */
+.md-form .form-control:focus~label,
+/* when field is not empty and not focused */
+.md-form .form-control:not(:placeholder-shown):not(:focus)~label,
+/* when selected any option */
+.md-form .form-select:valid~label {
+  top: -.6rem;
+  font-size: var(--small-font);
+  z-index: 1;
+}
+
+
+/*===========================================
+OUTLINE
+.md-form.md-form-outline
+=============================================*/
+
+/* border on focus */
+.md-form.md-form-outline .form-control:focus,
+.md-form.md-form-outline .form-select:focus {
+border-width:1.25px;
+}
+
+.md-form.md-form-outline .form-control~label,
+.md-form.md-form-outline .form-select~label {
+  left: .5rem;
+  padding-left: 0.25rem;
+  padding-right: .5rem;
+  background: #fff;
+}
+
+.md-form.md-form-outline .form-control-sm~label,
+.md-form.md-form-outline .form-select-sm~label {
+  left: .25rem;
+  padding-left: 0.25rem;
+  padding-right: .5rem;
+  background: #fff;
+}
+
+.md-form.md-form-outline .form-control-lg~label,
+.md-form.md-form-outline .form-select-lg~label {
+  left: .75rem;
+  padding-left: 0.25rem;
+  padding-right: .5rem;
+  background: #fff;
+}
+
+.md-form.md-form-outline .was-validated .form-control:valid:not(:focus),
+.md-form.md-form-outline .was-validated .form-select:valid:not(:focus){
+border-color:var(--form-control-border-color);
+}
+
+
+
+
+
+
+
+
+
+/*===========================================
+UNDERLINE
+.md-form.md-form-underline
+=============================================*/
+.md-form.md-form-underline .form-control~label,
+.md-form.md-form-underline .form-select~label {
+  left: 0;
+  background: none;
+}
+
+
+
+
+/** ====================
+* Common Validation CSS 
+*/
+/* LABEL CSS */
+/* focus on valid input label */
+.md-form.was-validated .form-control:valid:focus~label,
+.md-form .was-validated .form-control:valid:focus~label,
+.md-form .form-control.is-valid:valid:focus~label, 
+/* focus on valid select label */
+.md-form.was-validated .form-select:valid:focus~label,
+.md-form .was-validated .form-select:valid:focus~label,
+.md-form .form-select.is-valid:valid:focus~label {
+  color: var(--bs-success);
+}
+
+/* invalid input label */
+.md-form.was-validated .form-control:invalid~label,
+.md-form .was-validated .form-control:invalid~label,
+.md-form .form-control.is-invalid:invalid~label, 
+/* invalid select label */
+.md-form.was-validated .form-select:invalid~label,
+.md-form .was-validated .form-select:invalid~label,
+.md-form .form-select.is-invalid:invalid~label {
+  color: var(--bs-danger);
+}
+
+/* invalid input border */
+.md-form.was-validated .form-control:invalid,
+.md-form .was-validated .form-control:invalid,
+.md-form .form-control.is-invalid:invalid, 
+/* invalid select label */
+.md-form.was-validated .form-select:invalid,
+.md-form .was-validated .form-select:invalid,
+.md-form .form-select.is-invalid:invalid{
+  border-color: var(--bs-danger);
+}
+
+
+
+
+
+
+/*===========================================
+UNDERLINE
+md-item-underline
+=============================================*/
+
+
+/* md-item-underline */
+/* border setting */
+.md-form.md-form-underline .form-control:not([type='file']),
+.md-form.md-form-underline .form-select {
+  border: none !important;
+  border-radius: 0;
+  border-bottom: 1px solid var(--form-control-border-color) !important;
+}
+
+/* underline highlighter */
+.md-form.md-form-underline .form-control~.md-item-underline,
+.md-form.md-form-underline .form-select~.md-item-underline {
+  position: absolute;
+  height: 2px !important;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+/* focus on highlighter */
+.md-form.md-form-underline .form-control:focus~.md-item-underline,
+.md-form.md-form-underline .form-select:focus~.md-item-underline {
+  height: 2px !important;
+}
+
+/* highlight setting */
+.md-form.md-form-underline .form-control~.md-item-underline:before,
+.md-form.md-form-underline .form-select~.md-item-underline:before {
+  position: absolute;
+  left: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--bs-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+/** ===============
+*highlighter visible on focus 
+*/
+
+/*.md-form.md-form-underline .form-control:not(:placeholder-shown):not(:focus)~.md-item-underline:before,*/
+.md-form.md-form-underline .form-control:focus~.md-item-underline:before ,
+  .md-form.md-form-underline .form-select:focus~.md-item-underline:before {
+  transform: scaleX(1);
+}
+
+/** ==================
+* highlightet color on valid input 
+*/
+.md-form.was-validated .form-control:valid~.md-item-underline:before,
+.md-form .was-validated .form-control:valid~.md-item-underline:before,
+.md-form .form-control.is-valid:valid~.md-item-underline:before,
+ 
+ .md-form.was-validated .form-select:valid~.md-item-underline:before,
+ .md-form .was-validated .form-select:valid~.md-item-underline:before,
+ .md-form .form-select.is-valid:valid~.md-item-underline:before
+ {
+  background-color: var(--bs-success);
+}
+/** ==================
+* highlightet color on invalid input 
+*/
+.md-form.was-validated .form-control:invalid~.md-item-underline:before,
+.md-form .was-validated .form-control:invalid~.md-item-underline:before,
+.md-form .form-control.is-invalid:invalid~.md-item-underline:before
+{
+  background-color: var(--bs-danger);
+}
+
+/** ============
+* highlighter visible on invalid value 
+*/
+
+/* when invalid field focused */
+.md-form .was-validated .form-control:invalid:focus~.md-item-underline:before,
+/* when field is not empty and and not focused */
+.md-form .form-control.is-invalid:invalid:not(:placeholder-shown):not(:focus)~.md-item-underline:before,
+/* when invalid field is focused */
+.md-form .form-control.is-invalid:invalid:focus~.md-item-underline:before ,
+{
+transform: scaleX(1);
+background-color: var(--bs-danger);
+}
+
+/* FORM-CONTROL */
+/* when field is invalid  */
+.md-form .was-validated .form-control:invalid,
+/* when input value is invalid */
+.md-form .form-control.is-invalid:invalid:not(:placeholder-shown),
+/* when field is invalid  */
+.md-form .form-control.is-invalid:invalid,
+
+/* FORM-SELECT */
+/* when field is invalid  */
+.md-form .was-validated .form-select:invalid,
+/* when input value is invalid */
+.md-form .form-select.is-invalid:invalid:not(:placeholder-shown),
+/* when field is invalid  */
+.md-form .form-select.is-invalid:invalid {
+border-bottom:1px solid var(--bs-danger) !important;
+}
+
+/* when field has invalid value */
+.md-form.md-form-underline .was-validated .form-select:invalid:not(:placeholder-shown):not(:focus)~.md-item-underline:before,
+/* when focus on invalid field */
+.md-form.md-form-underline .was-validated .form-select:invalid:focus~.md-item-underline:before {
+background: var(--bs-danger);
+}
+
+
+
+
+/* add red star in required fields */
+.form-control:required~label:after,
+.form-select:required~label:after {
+  content: "*";
+  position: relative;
+  color: var(--bs-danger);
+  transform: scale(1.2)translateX(.2rem);
+  display: inline-block;
+  font-style: normal;
+}
